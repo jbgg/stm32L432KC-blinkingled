@@ -1,8 +1,9 @@
 
     .text
+    .syntax unified
 
-    .globl _vtor
-_vtor:
+    .globl _vtable
+_vtable:
     # initial sp    0x00
     .long .memend+1
     # reset         0x04

@@ -25,6 +25,4 @@ GPIOB3: configuration
 
 TODO:
     - fill .bss section 
-    - systick
-    - add delay
     

@@ -14,28 +14,21 @@
     .equ gpiob_brr, 0x48000428
 
     .text
-
     .syntax unified
 
+    # configuration of led 3
     .globl led3_config
 led3_config:
+    stmdb sp!, {lr}
 
     ldr r1, =rcc_ahb2enr
     ldr r0, [r1]
     orr r0, r0, 1 << 1
     str r0, [r1]
 
-    # TODO: use delay function
-    b 1f
-1:
-    b 1f
-1:
-    b 1f
-1:
-    b 1f
-1:
-    b 1f
-1:
+    # delay
+    ldr r0, =10
+    bl delay
     
     ldr r1, =gpiob_moder
     ldr r0, [r1]
@@ -59,13 +52,15 @@ led3_config:
     and r0, r0, ~(1 << 7)
     str r0, [r1]
 
-    bx lr
+    ldm sp!, {pc}
 
-    # TODO:
+    # TODO
+    # get the state of led 3
 led3_state:
     
     bx lr
 
+    # set the led 3
     .globl led3_on
 led3_on:
     
@@ -75,6 +70,7 @@ led3_on:
     
     bx lr
 
+    # reset the led 3
     .globl led3_off
 led3_off:
 
