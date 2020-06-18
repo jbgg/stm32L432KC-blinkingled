@@ -26,3 +26,17 @@ GPIOB3: configuration
 TODO:
     - fill .bss section 
     
+
+
+jumper d2:
+STM32 I/O PA12
+
+GPIOA base addr: 0x48000000
+
+GPIOA12: configuration
+    00 moder: 0 (input mode)
+    04 otyper: x
+    08 ospeedr: x
+    0c pupdr: 0 (floating)
+
+

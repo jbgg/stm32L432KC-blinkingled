@@ -17,8 +17,18 @@ _start:
 
     bl led3_config
 
+    bl jmpd2_config
 
-1:  @ main loop
+
+1:
+
+    bl jmpd2_state
+    tst r0, #1
+    bne 1b
+    
+
+
+1:
 
     ldr r0, =1000
     bl delay

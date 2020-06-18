@@ -9,7 +9,7 @@ GDB=$(PREFIX)gdb
 MEMSTART=0x20000000
 MEMEND=0x20000fff
 
-OBJ=vtable.o boot.o int.o systick.o led3.o
+OBJ=vtable.o boot.o int.o systick.o led3.o jmpd2.o
 
 
 all: sys

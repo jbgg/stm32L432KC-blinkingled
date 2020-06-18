@@ -54,7 +54,7 @@ delay:
     
 
     .data
-systick_reload: .long 512
+systick_reload: .long 512-1
 systick_ntick: .long 0x0
 
 

@@ -38,7 +38,7 @@ led3_config:
 
     ldr r1, =gpiob_otyper
     ldr r0, [r1]
-    and r0, r0, ~(3 << 6)
+    and r0, r0, ~(1 << 3)
     str r0, [r1]
 
     ldr r1, =gpiob_ospeedr
