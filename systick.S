@@ -40,9 +40,6 @@ systick_tick:
 delay:
     ldr r1, =systick_ntick
     ldr r2, [r1]
-    lsl r0, r0, #10
-    ldr r3, =1000
-    udiv r0, r0, r3
     add r0, r0, r2
     
 1:
@@ -54,7 +51,7 @@ delay:
     
 
     .data
-systick_reload: .long 512-1
+systick_reload: .long 6*1000-1
 systick_ntick: .long 0x0
 
 

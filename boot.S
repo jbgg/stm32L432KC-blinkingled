@@ -12,6 +12,7 @@ _start:
     ldr r1, =VTOR
     str r0, [r1]
 
+    bl clock_config
 
     bl systick_config
 
